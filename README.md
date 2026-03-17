@@ -4,7 +4,7 @@
 [![Total Downloads](https://img.shields.io/packagist/dt/kwtsms/kwtsms-notification-channel.svg?style=flat-square)](https://packagist.org/packages/kwtsms/kwtsms-notification-channel)
 [![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](LICENSE)
 
-This package makes it easy to send notifications using [kwtSMS](https://kwtsms.com) with Laravel.
+This package makes it easy to send notifications using [kwtSMS](https://www.kwtsms.com) with Laravel.
 
 ## Contents
 
@@ -46,7 +46,7 @@ KWTSMS_TEST_MODE=false
 
 To get started, you need a kwtSMS account:
 
-1. Sign up at [kwtsms.com](https://kwtsms.com)
+1. Sign up at [kwtsms.com](https://www.kwtsms.com)
 2. Obtain your API username and password from the dashboard
 3. Register a Sender ID (or use the default `KWT-SMS`)
 4. Add the credentials to your `.env` file as shown above
@@ -124,7 +124,7 @@ Please see [CONTRIBUTING](CONTRIBUTING.md) for details.
 
 ## Credits
 
-- [M Alhassoun](https://github.com/boxlinknet)
+- [BoxLink](https://github.com/boxlinknet)
 - [All Contributors](../../contributors)
 
 ## License
