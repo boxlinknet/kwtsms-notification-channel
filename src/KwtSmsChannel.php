@@ -8,7 +8,9 @@ use NotificationChannels\KwtSms\Exceptions\CouldNotSendNotification;
 
 class KwtSmsChannel
 {
-    public function __construct(protected KwtSMS $client) {}
+    public function __construct(protected KwtSMS $client)
+    {
+    }
 
     public function send(mixed $notifiable, Notification $notification): ?array
     {

@@ -10,7 +10,7 @@ class KwtSmsMessage
 
     public static function create(string $content = ''): static
     {
-        return (new static)->content($content);
+        return (new static())->content($content);
     }
 
     public function content(string $content): static

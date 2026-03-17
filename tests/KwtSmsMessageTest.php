@@ -9,7 +9,7 @@ class KwtSmsMessageTest extends TestCase
 {
     public function test_can_create_message_with_content(): void
     {
-        $message = new KwtSmsMessage;
+        $message = new KwtSmsMessage();
         $message->content('Hello');
 
         $this->assertSame('Hello', $message->getContent());
@@ -31,14 +31,14 @@ class KwtSmsMessageTest extends TestCase
 
     public function test_content_defaults_to_empty_string(): void
     {
-        $message = new KwtSmsMessage;
+        $message = new KwtSmsMessage();
 
         $this->assertSame('', $message->getContent());
     }
 
     public function test_sender_defaults_to_null(): void
     {
-        $message = new KwtSmsMessage;
+        $message = new KwtSmsMessage();
 
         $this->assertNull($message->getSender());
     }

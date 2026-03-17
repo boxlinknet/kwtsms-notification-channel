@@ -36,7 +36,7 @@ class KwtSmsChannelTest extends TestCase
             ->with('96598765432', 'Test message', 'KWT-SMS')
             ->andReturn(['result' => 'OK', 'msg-id' => '12345']);
 
-        $response = $this->channel->send(new TestNotifiable, new TestNotification);
+        $response = $this->channel->send(new TestNotifiable(), new TestNotification());
 
         $this->assertSame('OK', $response['result']);
     }
@@ -45,7 +45,7 @@ class KwtSmsChannelTest extends TestCase
     {
         $this->client->shouldNotReceive('send');
 
-        $response = $this->channel->send(new TestNotifiable, new TestEmptyNotification);
+        $response = $this->channel->send(new TestNotifiable(), new TestEmptyNotification());
 
         $this->assertNull($response);
     }
@@ -54,7 +54,7 @@ class KwtSmsChannelTest extends TestCase
     {
         $this->client->shouldNotReceive('send');
 
-        $response = $this->channel->send(new TestNotifiableWithoutPhone, new TestNotification);
+        $response = $this->channel->send(new TestNotifiableWithoutPhone(), new TestNotification);
 
         $this->assertNull($response);
     }
@@ -69,7 +69,7 @@ class KwtSmsChannelTest extends TestCase
         $this->expectException(CouldNotSendNotification::class);
         $this->expectExceptionMessage('kwtSMS API error [ERR001]: Invalid credentials');
 
-        $this->channel->send(new TestNotifiable, new TestNotification);
+        $this->channel->send(new TestNotifiable(), new TestNotification());
     }
 
     public function test_it_accepts_string_message(): void
@@ -80,7 +80,7 @@ class KwtSmsChannelTest extends TestCase
             ->with('96598765432', 'String message', 'KWT-SMS')
             ->andReturn(['result' => 'OK']);
 
-        $response = $this->channel->send(new TestNotifiable, new TestStringNotification);
+        $response = $this->channel->send(new TestNotifiable(), new TestStringNotification());
 
         $this->assertSame('OK', $response['result']);
     }
